@@ -6,7 +6,10 @@ export default class UserModel{
         this.type=type;
         this.id=id;
     }
-    static SignUp(name,email,password,type){
+    static getAll(){
+        return users;
+    }
+    static signUp(name,email,password,type){
 
         const newUser=new UserModel(
             name,
@@ -19,7 +22,7 @@ export default class UserModel{
         return newUser;
 
     }
-    static SignIn(email,password){
+    static signIn(email,password){
         const user=users.find(
             (u)=>u.email==email&&
             u.password==password
@@ -28,12 +31,19 @@ export default class UserModel{
         return user;
     }
 }
-var users = [
+let users = [
   {
     id: 1,
-    name: 'Seller User',
-    email: 'seller@ecom.com',
-    password: 'Password1',
+    name:'Seller User',
+    email:'sarkarrobin1967@gmail.com',
+    password:'Sarkar1$',
     type: 'seller',
   },
+  {
+    id: 2,
+    name:'Customer User',
+    email:'customer@ecom.com',
+    password:'Password1',
+    type: 'customer',
+  }
 ];

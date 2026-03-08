@@ -22,6 +22,8 @@ const jwtAuth = (req, res, next) => {
       token,
       "p8uh2jjb47bnwUPYka5vSmvxgcyOFmAk858DZqqe+yo=",
     );
+    req.userID=req.payload;
+    console.log(payload);
 
     next();
   } catch (err) {
